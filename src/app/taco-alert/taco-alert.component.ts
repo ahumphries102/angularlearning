@@ -10,9 +10,6 @@ export class TacoAlertComponent implements OnInit {
   constructor() { 
   }
   tacoId = 40
-  getTacoId(){
-    return this.tacoId
-  }
   ngOnInit(): void {
   }
 
