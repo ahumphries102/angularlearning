@@ -1,4 +1,14 @@
-<p>success-alert works!</p>
-<button class="btn btn-primary" (click)="onCreateServer()">Activate Service</button>
-<!-- <p [innerText]="allowNewServer?'woof':'corump'"></p> -->
-<p>{{serverCreationService}}</p>
+ <input type="text" class="form-control" [(ngModel)]="serverName" />
+ <!--<p>{{serverName}}</p>-->
+ <button type="button" class="btn btn-primary" (click)="onUpdateserverName()">click</button>
+
+ <p *ngIf="serverCreated; else noServer">Server was created. The name is {{serverName}}</p>
+ <ng-template #noServer>
+   <p>
+     Sorry bruh there is no server
+   </p>
+ </ng-template>
+
+ 
+ <button type="button" class="btn btn-primary" (click)="getServerStatus()">click</button>
+ <p [ngStyle]="{color:serverStatus?'green':'red'}">Your server is {{serverStatus?'online':'offline'}}</p>
